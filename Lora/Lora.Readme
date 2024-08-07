@@ -11,3 +11,13 @@ An image processor is in charge of preparing input features for vision models an
 This includes transformations such as resizing, normalization, and conversion to PyTorch, TensorFlow, Flax and Numpy tensors. 
 It may also include model specific post-processing such as converting logits to segmentation masks.
 
+AutoProcessor
+(https://huggingface.co/docs/transformers/en/autoclass_tutorial)
+Multimodal tasks require a processor that combines two types of preprocessing tools. For example, the LayoutLMV2 model requires an image processor to handle images and a tokenizer to handle text; a processor combines both of them.
+
+Load a processor with AutoProcessor.from_pretrained():
+
+Copied
+from transformers import AutoProcessor
+
+processor = AutoProcessor.from_pretrained("microsoft/layoutlmv2-base-uncased")
